@@ -7,72 +7,73 @@ import { PinContainer } from "./ui/Pin";
 
 const RecentProjects = () => {
   return (
-    <div className="py-20">
+    <div className="py-12 h-full flex flex-col" id="projects">
       <h1 className="heading">
-        A small selection of{" "}
-        <span className="text-purple">recent projects</span>
+        My <span className="text-purple">recent projects</span>
       </h1>
-      <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
+      <div className="flex flex-col items-center justify-center p-4 gap-16 mt-10 h-full">
         {projects.map((item) => (
           <div
-            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
-            key={item.id}
+            className="flex flex-1 items-center border border-white            
+            flex-col justify-center w-full rounded-sm p-4 shadow-md shadow-white-100"
           >
-            <PinContainer
-              title="/ui.aceternity.com"
-              href="https://twitter.com/mannupaaji"
+            <h1 className="subheading">{item.title}</h1>
+            <div
+              className="flex flex-1 items-center
+            flex-col md:flex-row justify-center w-full rounded-sm p-4"
+              key={item.id}
             >
-              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
-                <div
-                  className="relative w-full h-full overflow-hidden lg:rounded-3xl"
-                  style={{ backgroundColor: "#13162D" }}
-                >
-                  <img src="/bg.png" alt="bgimg" />
+              {/* Image */}
+              <div className="flex flex-col w-full h-full items-center justify-center">
+                <div className="relative lg:w-[400px] lg:h-[300px] md:w-[300px] md:h-[225px] min-h-[150px] min-w-[200px]">
+                  <img
+                    className="absolute top-0 left-0 w-full h-full object-cover rounded-xl"
+                    src={item.img}
+                    alt="project image"
+                    style={{ aspectRatio: "3 / 4" }}
+                  />
                 </div>
-                <img
-                  src={item.img}
-                  alt="cover"
-                  className="z-10 absolute bottom-0"
-                />
               </div>
 
-              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
-                {item.title}
-              </h1>
+              {/* TODO figure out border btw sections */}
+              {/* <div className="hidden md:flex border-r border-gray-300"></div>
+              <hr className="m-2 border h-full w-full border-white"></hr> */}
 
-              <p
-                className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
-                style={{
-                  color: "#BEC1DD",
-                  margin: "1vh 0",
-                }}
-              >
-                {item.des}
-              </p>
-
-              <div className="flex items-center justify-between mt-7 mb-3">
-                <div className="flex items-center">
-                  {item.iconLists.map((icon, index) => (
-                    <div
-                      key={index}
-                      className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
-                      style={{
-                        transform: `translateX(-${5 * index + 2}px)`,
-                      }}
-                    >
-                      <img src={icon} alt="icon5" className="p-2" />
-                    </div>
-                  ))}
-                </div>
-
-                <div className="flex justify-center items-center">
-                  <p className="flex lg:text-xl md:text-xs text-sm text-purple">
-                    Check Live Site
+              {/* Description */}
+              <div className="flex flex-col">
+                <div className="flex flex-col items-center justify-between mt-7 mb-3">
+                  <p className="body my-4 pb-4 border-b border-white-100 m-2 md:mx-8">
+                    {item.des}
                   </p>
-                  <FaLocationArrow className="ms-3" color="#CBACF9" />
+                  <div className="flex flex-col items-center w-full mx-2">
+                    <div className="subheading mb-2 text-purple"> Used: </div>
+                    <div className="flex flex-col items-center justify-center bg-slate-80 w-full">
+                      <ul className="list-disc text-sm i bg-green-90 w-full grid grid-cols-2 gap-4 ml-4">
+                        {item.used.map((language) => (
+                          <li className="flex items-center justify-center">
+                            • {language}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex justify-center items-center mt-4">
+                  <a
+                    className="flex text-sm text-purple hover:text-violet-500"
+                    href={item.link}
+                    target={item.newPage ? "_blank" : "_self"}
+                    rel={item.newPage ? "noopener noreferrer" : undefined}
+                  >
+                    {item.linkText}
+                    <FaLocationArrow
+                      className="ms-2 mt-[2px]"
+                      color="#CBACF9"
+                    />
+                  </a>
                 </div>
               </div>
-            </PinContainer>
+            </div>
           </div>
         ))}
       </div>

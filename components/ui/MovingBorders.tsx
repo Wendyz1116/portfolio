@@ -18,6 +18,7 @@ export function Button({
   borderClassName,
   duration,
   className,
+  hover,
   ...otherProps
 }: {
   borderRadius?: string;
@@ -27,6 +28,7 @@ export function Button({
   borderClassName?: string;
   duration?: number;
   className?: string;
+  hover: boolean;
   [key: string]: any;
 }) {
   return (
@@ -42,13 +44,13 @@ export function Button({
       {...otherProps}
     >
       <div
-        className="absolute inset-0 rounde-[1.75rem]"
+        className="absolute inset-0 rounded-[1.75rem]"
         style={{ borderRadius: `calc(${borderRadius} * 0.96)` }}
       >
-        <MovingBorder duration={duration} rx="30%" ry="30%">
+        <MovingBorder duration={duration} rx="10%" ry="10%">
           <div
             className={cn(
-              "h-20 w-20 opacity-[0.8] bg-[radial-gradient(#CBACF9_40%,transparent_60%)]",
+              `h-16 w-16 ${hover? "opacity-[0.5]": "opacity-[0]"} bg-[radial-gradient(#CBACF9_40%,transparent_60%)]`,
               borderClassName
             )}
           />

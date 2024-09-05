@@ -70,9 +70,11 @@
   * {
     @apply border-border !scroll-smooth;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   button {
     @apply active:outline-none;
   }
@@ -81,5 +83,17 @@
 @layer utilities {
   .heading {
     @apply font-bold text-4xl md:text-5xl text-center;
+  }
+
+  .subheading {
+    @apply font-bold text-xl md:text-2xl;
+  }
+
+  .body {
+    @apply md:text-xl text-center;
+  }
+
+  .bullets {
+    @apply md:text-xl;
   }
 }
