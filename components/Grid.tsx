@@ -97,8 +97,8 @@ const Grid = () => {
             <div>
               <h1 className="subheading my-2">Languages</h1>
               <ul className="bullets space-y-2">
-                {languages.map((language) => (
-                  <li>
+                {languages.map((language, idx) => (
+                  <li key={idx}>
                     •{" "}
                     <span
                       className={`${
@@ -114,8 +114,8 @@ const Grid = () => {
             <div>
               <h1 className="subheading my-2">Technologies</h1>
               <ul className="bullets space-y-2">
-                {technologies.map((technology) => (
-                  <li>
+                {technologies.map((technology, idx) => (
+                  <li key={idx}>
                     •{" "}
                     <span
                       className={`${

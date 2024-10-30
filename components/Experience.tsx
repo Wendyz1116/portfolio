@@ -4,7 +4,7 @@ import { workExperience } from "@/data";
 import { Button } from "./ui/MovingBorders";
 
 const Experience = () => {
-  const [hoverStates, setHoverStates] = useState<boolean[]>({});
+  const [hoverStates, setHoverStates] = useState<boolean[]>([]);
 
   const handleMouseEnter = (id: number) => {
     setHoverStates((prev) => ({ ...prev, [id]: true }));
@@ -44,8 +44,8 @@ const Experience = () => {
               <p className="body text-purple">{experience.company}</p>
               <p className="body text-purple">{experience.dates}</p>
               <ul className="text-start space-y-2 pt-4 list-disc ml-4">
-                {experience.bullets.map((bullet) => (
-                  <li>{bullet}</li>
+                {experience.bullets.map((bullet, idx) => (
+                  <li key={idx}>{bullet}</li>
                 ))}
               </ul>
             </div>

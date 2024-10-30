@@ -100,6 +100,17 @@ export const projects = [
     link: "#work",
     linkText: "Read More",
   },
+  {
+    id: 3,
+    title: "Happiness Garden (Android App)",
+    des: "A wellness app that gamifies the habit of self-reflection and gratitude. Each journal entry will add a new flower to a the garden. Users can write down what they are grateful for and any worries they may have.  Developed in a week to explore Kotlin and Android development.",
+    img: "/happyImg.png",
+    used: ["Kotlin", "Firebase", "Android Studio"],
+    video: "/happyVid.mp4",
+    newPage: false,
+    link: "https://github.com/Wendyz1116/happiness-garden/tree/main",
+    linkText: "Read More",
+  },
 ];
 
 export const workExperience = [

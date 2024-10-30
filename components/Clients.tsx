@@ -74,7 +74,7 @@ const Clients = () => {
             <div>
               <ul className="bullets space-y-2 list-disc ml-4">
                 {courses.map((course) => (
-                  <li id={course}>{course}</li>
+                  <li key={course}>{course}</li>
                 ))}
               </ul>
             </div>
@@ -90,7 +90,7 @@ const Clients = () => {
             <div>
               <ul className="bullets space-y-2 list-disc ml-4">
                 {activities.map((activity) => (
-                  <li id={activity.club}>
+                  <li key={activity.club}>
                     <div>
                       {activity.position ? `${activity.position} @ ` : ""}
                       <a

@@ -27,7 +27,7 @@ const Hero = () => {
           />
 
           <p className="text-center mb-4 body">
-            I'm a junior at the{" "}
+            I&apos;m a junior at the{" "}
             <a href="#education" className="text-purple">
               Massachusetts Institute of Technology
             </a>

@@ -24,7 +24,7 @@ const Footer = () => {
           Currently looking for Software Engineering or related internships for
           Summer 2024.
         </p>
-        <a href="mailto:contact@jsmastery.pro">
+        <a href="mailto:wendyzhang1116@gmail.com">
           <MagicButton
             title="Let's get in touch"
             icon={<FaLocationArrow />}
